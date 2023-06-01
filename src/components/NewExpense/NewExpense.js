@@ -6,9 +6,9 @@ import './NewExpense.css';
 
 const NewExpense = () => {
 
-    return <div>
-
-    </div>
+    return <div className="new-expense">
+        <ExpenseForm/>
+    </div>;
 };
 
 export default NewExpense;
