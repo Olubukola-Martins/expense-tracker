@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-  
+  const [expenses, setExpenses] = useState(props.items);
+
   const dropdownChangeHandler = (event) => {
     props.onChangeFilter(event.target.value);
+    return setExpenses(
+      props.items.filter(
+        (item) => event.target.value === item.date.getFullYear()
+      )
+    );
   };
+
+  // const addExpenseHandler = (newExpense) => {
+  //         props.items.filter((item) => item.date.getFullYear() === selectedYear);
+  //   };
 
   return (
     <div className="expenses-filter">
